@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>SparseCtrl-HOI: Sparse Temporal Control for Human-Object Interaction Video Generation</title>
+  <link rel="icon" href="data:,">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <h1 class="title is-1 publication-title">
+            SparseCtrl-HOI: Sparse Temporal Control for Human-Object Interaction Video Generation
+          </h1>
+
+          <h2 class="subtitle is-4">
+            ECCV 2026
+          </h2>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Shenbo Xie,
+            </span>
+            <span class="author-block">
+              Mingrui Cai,
+            </span>
+            <span class="author-block">
+              Xu Yang,
+            </span>
+            <span class="author-block">
+              Yifei Liu,
+            </span>
+            <span class="author-block">
+              Changxing Ding<sup>✉</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              South China University of Technology
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">
+              <sup>✉</sup> Corresponding author.
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="column has-text-centered">
+  <div class="publication-links">
+    <span class="link-block">
+      <a href="" target="_blank"
+      class="external-link button is-normal is-rounded is-dark">
+      <span class="icon">
+        <i class="fas fa-file-pdf"></i>
+      </span>
+      <span>Paper</span>
+      </a>
+    </span>
+
+    <span class="link-block">
+      <a href="https://github.com/MPI-Lab/SparseCtrl-HOI" target="_blank"
+      class="external-link button is-normal is-rounded is-dark">
+      <span class="icon">
+        <i class="fab fa-github"></i>
+      </span>
+      <span>Code</span>
+      </a>
+    </span>
+  </div>
+</div>
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      
+      <div class="column has-text-centered">
+        <h2 class="subtitle has-text-centered" style="font-size: 18px;">
+          SparseCtrl-HOI enables the generation of high-quality and diverse Human-Object Interaction videos with sparse temporal control.
+        </h2>
+      </div>
+
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item item-video8">
+          <video poster="" id="video8"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/mx48C_y8vl8_0-Scene-073.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-video9">
+          <video poster="" id="video9"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/NKXXOMy-3Cw_0-Scene-012.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video2">
+          <video poster="" id="video2"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/av243793126-Scene-004-Scene-1.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video3">
+          <video poster="" id="video3"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/av552446946-Scene-012.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video4">
+          <video poster="" id="video4"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/BV1ie4y1U7C7-Scene-042.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video5">
+          <video poster="" id="video5"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/BV1rt411R7hb-Scene-001.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-video6">
+          <video poster="" id="video6"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/BV1t8yoYREV5-Scene-048.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-video7">
+          <video poster="" id="video7"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/BV1x7411K7MH-Scene-092.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+
+        <div class="item item-video1">
+          <video poster="" id="video1"  controls   playsinline style="width: 95%; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <source src="static/videos/teaser_videos/ANb_LRt0Ylg_0-Scene-036-Scene-7.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+      </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3" style="text-align: center; margin-top: 50px;">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Human-Object Interaction (HOI) video generation aims to synthesize realistic videos of humans manipulating diverse objects, serving as a promising avenue for AI-driven live streaming e-commerce. A primary obstacle in this domain lies in the complexity of modeling fine-grained physical dynamics and the intricate spatial-temporal coordination between human hands and objects. Existing approaches to this problem typically rely on dense temporal guidance, e.g., frame-wise hand-object pose sequences, to strictly control the interaction process. However, such dense guidance incurs high annotation costs and affects motion synthesis diversity. To overcome these limitations, we introduce SparseCtrl-HOI, a novel sparse temporal control framework for HOI video generation. It requires only a few keyframes that capture interaction states at designated timestamps. Specifically, we employ a Time-Controlled Rotary Positional Embedding (TiRoPE) mechanism to temporally anchor these keyframes while preserving their spatial integrity. Subsequently, to govern the dynamics across intermediate frames, we propose a Motion Prior Injection Module that leverages Multimodal Large Language Models (MLLMs) to extract high-level motion priors. This empowers the model to hallucinate logically and physically plausible transitions. Furthermore, we build SparseHOI-5K, a high-quality and richly annotated dataset for HOI video generation with sparse temporal control. Comprehensive evaluations confirm that our method substantially reduces annotation overhead while synthesizing superior live-streaming e-commerce videos.
+            <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+       <h2 class="title is-3" style="text-align: center;  margin-top: 50px;">Method</h2>
+        <div class="columns is-centered">
+         <img src="static/images/framework.svg" style="width: 100%; max-width: 860px; margin-top: 20px;" alt="Method Framework"/>
+        </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+           <div class="content has-text-justified">
+            <p>
+              Figure 1: The overall framework of our SparseCtrl-HOI. We adopt a two-stage training 
+              strategy built upon the Wan2.1-DiT backbone. Given a reference image $I_{ref}$, an audio sequence, and sparse interaction keyframes $I_{ho}^{1}, \ldots, I_{ho}^{K}$ at specified timestamps, the
+              pipeline operates as follows. Motion Prior Encoding (Top): A frozen Qwen2.5-VL 
+              extracts high-level motion semantics from the prompt and keyframes. These are then compressed by a Q-Former into motion prior tokens $C_{mllm}$. Main Pipeline: Visual
+              inputs are encoded by a frozen VAE. We concatenate these latents to $z_{in}$. Furthermore, the TiRoPE mechanism is applied to $z_{ho}$. Within the DiT blocks, we inject
+              LoRA into the Self-Attention and Text Cross-Attention layers (Stage 1), and introduce a novel Motion Cross-Attention layer (Stage 2) in each block to integrate the
+              $C_{mllm}$ tokens, enabling coherent, human-object interaction video generation.
+              <!-- StableAnimator is based on the commonly used SVD following previous works. A reference image is processed through the diffusion model via three pathways: (1) Transformed into a latent code by a frozen VAE Encoder. The latent code is duplicated to match video frames, then concatenated with main latents. (2) Encoded by the CLIP Image Encoder to obtain image embeddings, which are fed to each cross-attention block of a denoising U-Net and our Face Encoder, respectively, to modulate the synthesized appearance. (3) Input to Arcface to gain face embeddings, which are subsequently refined for further alignment via our Face Encoder. Refined face embeddings are then fed to the denoising U-Net. A PoseNet with a similar architecture as AnimateAnyone extracts the features of the pose sequence, which are then added to the noisy latents. We replace the original input video frames with random noise during inference, while the other inputs stay the same. We propose a novel HJB-equation-based face optimization to enhance ID consistency and eliminate reliance on third-party post-processing tools. It integrates the solution process of the HJB equation into the denoising, allowing optimal gradient direction toward high ID consistency. -->
+            </p>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+       <h2 class="title is-3" style="text-align: center; margin-top: 50px;">SparseHOI-5K Dataset Introduction</h2>
+      
+       <div class="content has-text-justified">
+        <div class="columns is-centered">
+            <img src="static/images/data_statics_compare.png" alt="Figure_3_17_data_filter_AI.png" style="max-width: 860px; margin-top: 20px;"/>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <div class="content has-text-justified">
+                <p style="margin: 0 auto; text-align: center;">
+                  Table 1: Comparisons of our SparseHOI-5k dataset with existing public HOI datasets. "-" indicates that the specific number of actors is not reported in their official release.
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content has-text-justified">
+        <div class="columns is-centered">
+            <img src="static/images/data_statics.jpg" alt="Figure_3_17_data_filter_AI.png" style="max-width: 800px; margin-top: 20px;"/>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <div class="content has-text-justified">
+                <p style="margin: 0 auto; text-align: center;">
+                  Figure 2: More details of SparseHOI-5K dataset.
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <div class="content has-text-justified">
+        <div class="columns is-centered">
+            <img src="static/images/data_pipeline_html.svg" alt="Figure_3_17_data_filter_AI.png" style="max-width: 860px; margin-top: 20px;"/>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <div class="content has-text-justified">
+                <p style="margin: 0 auto; text-align: center;">
+                  Figure 3: The data construction pipeline of SparseHOI-5K dataset.
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
+</section>
+
+
+<!-- Comparisons with SOTA methods -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3" style="text-align: center; margin-top: 50px;">Comparisons with SOTA Methods</h2>
+      <div class="item item-video1">
+        <table  width="1000" align="center">
+          <tbody>
+            <tr>
+              <th>
+                <video  width="1000" src="static/videos/comparison_videos/ANb_LRt0Ylg_0-Scene-036-Scene-7_demo.mp4" controls></video>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <video  width="1000" src="static/videos/comparison_videos/BV1t8yoYREV5-Scene-048_demo.mp4" controls></video>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <video  width="1000" src="static/videos/comparison_videos/BV1x7411K7MH-Scene-092_demo.mp4" controls></video>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <video  width="1000" src="static/videos/comparison_videos/7_demo.mp4" controls></video>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- End Comparisons with SOTA methods -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3" style="text-align: center;">Ablation Study</h2>
+        <div class="item item-video1">
+          <table  width="1000" align="center">
+            <tbody>
+              <tr>
+                <th>
+                  <video  width="1000" src="static/videos/ablation/BV1AW411d7cV-Scene-017_grid_demo.mp4" controls></video>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <h2 class="subtitle has-text-centered" style="font-size: 18px; max-width: 860px; margin: 0 auto; text-align: center;">
+        "Transformer->MLP" denotes applying a Transformer followed by an MLP within the Q-former to extract condensed motion priors, whereas "MLP only" indicates replacing the entire Q-former module with a simple MLP.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+<!-- @inproceedings{yang2025demo,
+    title={Democratizing High-Fidelity Co-Speech Gesture Video Generation},
+    author={Xu Yang and Shaoli Huang and Shenbo Xie and Xuelin Chen and Yifei Liu and Changxing Ding},
+    booktitle={Proceedings of the 2025 International Conference on Computer Vision(ICCV)},
+    year={2025}
+} -->
+</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
