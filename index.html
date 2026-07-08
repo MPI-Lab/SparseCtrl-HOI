@@ -241,12 +241,12 @@
            <div class="content has-text-justified">
             <p>
               Figure 1: The overall framework of our SparseCtrl-HOI. We adopt a two-stage training 
-              strategy built upon the Wan2.1-DiT backbone. Given a reference image $I_{ref}$, an audio sequence, and sparse interaction keyframes $I_{ho}^{1}, \ldots, I_{ho}^{K}$ at specified timestamps, the
+              strategy built upon the Wan2.1-DiT backbone. Given a reference image $I_\mathrm{ref}$, an audio sequence, and sparse interaction keyframes $I_\mathrm{ho}^{1}, \ldots, I_\mathrm{ho}^{K}$ at specified timestamps, the
               pipeline operates as follows. Motion Prior Encoding (Top): A frozen Qwen2.5-VL 
-              extracts high-level motion semantics from the prompt and keyframes. These are then compressed by a Q-Former into motion prior tokens $C_{mllm}$. Main Pipeline: Visual
-              inputs are encoded by a frozen VAE. We concatenate these latents to $z_{in}$. Furthermore, the TiRoPE mechanism is applied to $z_{ho}$. Within the DiT blocks, we inject
+              extracts high-level motion semantics from the prompt and keyframes. These are then compressed by a Q-Former into motion prior tokens $\mathbf{C}_\mathrm{mllm}$. Main Pipeline: Visual
+              inputs are encoded by a frozen VAE. We concatenate these latents to $\mathbf{z}_\mathrm{in}$. Furthermore, the TiRoPE mechanism is applied to $\mathbf{z}_\mathrm{ho}$. Within the DiT blocks, we inject
               LoRA into the Self-Attention and Text Cross-Attention layers (Stage 1), and introduce a novel Motion Cross-Attention layer (Stage 2) in each block to integrate the
-              $C_{mllm}$ tokens, enabling coherent, human-object interaction video generation.
+              $\mathbf{C}_\mathrm{mllm}$ tokens, enabling coherent, human-object interaction video generation.
               <!-- StableAnimator is based on the commonly used SVD following previous works. A reference image is processed through the diffusion model via three pathways: (1) Transformed into a latent code by a frozen VAE Encoder. The latent code is duplicated to match video frames, then concatenated with main latents. (2) Encoded by the CLIP Image Encoder to obtain image embeddings, which are fed to each cross-attention block of a denoising U-Net and our Face Encoder, respectively, to modulate the synthesized appearance. (3) Input to Arcface to gain face embeddings, which are subsequently refined for further alignment via our Face Encoder. Refined face embeddings are then fed to the denoising U-Net. A PoseNet with a similar architecture as AnimateAnyone extracts the features of the pose sequence, which are then added to the noisy latents. We replace the original input video frames with random noise during inference, while the other inputs stay the same. We propose a novel HJB-equation-based face optimization to enhance ID consistency and eliminate reliance on third-party post-processing tools. It integrates the solution process of the HJB equation into the denoising, allowing optimal gradient direction toward high ID consistency. -->
             </p>
           </div>
@@ -269,7 +269,10 @@
           <div class="column is-full">
             <div class="content has-text-justified">
                 <p style="margin: 0 auto; text-align: center;">
-                  Table 1: Comparisons of our SparseHOI-5k dataset with existing public HOI datasets. "-" indicates that the specific number of actors is not reported in their official release.
+                  Table 1: Comparisons between SparseHOI-5K and existing public HOI datasets.
+                    “&ndash;” indicates that the value is not reported in the official release.
+                    <em>Hand Cut</em>/<em>Obj. Cut</em> denote cropped hand/object regions;
+                    <em>Obj-free</em> denotes object-removed videos via inpainting.
                 </p>
             </div>
           </div>
@@ -299,7 +302,7 @@
           <div class="column is-full">
             <div class="content has-text-justified">
                 <p style="margin: 0 auto; text-align: center;">
-                  Figure 3: The data construction pipeline of SparseHOI-5K dataset.
+                  Figure 3: An overview of SparseHOI-5K dataset collection pipeline.
                 </p>
             </div>
           </div>
