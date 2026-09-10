@@ -1,0 +1,62 @@
+# Project page (gh-pages branch checkout, not part of main)
+SparseCtrl-HOI_demo/
+
+# Large artifacts: never commit datasets, checkpoints, or generated outputs
+datasets/
+data/
+pretrained_models/
+checkpoints/
+models_out/
+outputs/
+results/
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.pkl
+*.npy
+*.npz
+*.mp4
+*.avi
+*.mov
+*.wav
+*.zip
+*.tar
+*.tar.gz
+!assets/**
+
+# Logs / experiment tracking
+logs/
+runs/
+wandb/
+tensorboard/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+*.egg
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Tooling / editors / OS
+.vscode/
+.idea/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Local scratch
+tmp/
+*.tmp
