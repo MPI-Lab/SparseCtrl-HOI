@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparsectrl_hoi"
+version = "0.1.0"
+description = "SparseCtrl-HOI: Sparse Temporal Control for Human-Object Interaction Video Generation"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch",
+    "torchvision",
+    "einops",
+    "safetensors",
+    "transformers>=4.49",
+    "peft",
+    "accelerate",
+    "librosa",
+    "imageio[ffmpeg]",
+    "opencv-python",
+    "Pillow",
+    "tqdm",
+    "numpy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

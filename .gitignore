@@ -2,13 +2,13 @@
 SparseCtrl-HOI_demo/
 
 # Large artifacts: never commit datasets, checkpoints, or generated outputs
-datasets/
-data/
-pretrained_models/
-checkpoints/
-models_out/
-outputs/
-results/
+datasets
+data
+pretrained_models
+checkpoints
+models_out
+outputs
+results
 *.ckpt
 *.pt
 *.pth

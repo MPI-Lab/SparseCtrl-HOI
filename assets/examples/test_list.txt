@@ -1,0 +1,4 @@
+assets/examples/teaser_05/ref_image.png#assets/examples/teaser_05/audio.wav#assets/examples/teaser_05/keyframes#[1, 54, 88, 120]
+assets/examples/teaser_06/ref_image.png#assets/examples/teaser_06/audio.wav#assets/examples/teaser_06/keyframes#[0, 32, 80, 120]
+assets/examples/teaser_07/ref_image.png#assets/examples/teaser_07/audio.wav#assets/examples/teaser_07/keyframes#[0, 42, 96, 120]
+assets/examples/teaser_09/ref_image.png#assets/examples/teaser_09/audio.wav#assets/examples/teaser_09/keyframes#[0, 12, 80, 120]
